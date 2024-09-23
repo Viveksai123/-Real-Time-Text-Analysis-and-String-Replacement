@@ -1,0 +1,64 @@
+.app-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .textarea-container {
+    margin-top: 20px;
+  }
+  
+  .input-textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .word-stats {
+    margin: 20px 0;
+    font-size: 18px;
+  }
+  
+  .string-replacement {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .input-field {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .replace-button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .result-text {
+    margin-top: 20px;
+  }
+  
+  .result-text p {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+  }
+  

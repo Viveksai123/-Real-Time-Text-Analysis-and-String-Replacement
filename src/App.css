@@ -1,38 +1,169 @@
-.App {
+/* General Styles */
+@media only screen and (max-width: 768px) {
+  .app-container {
+    width: 95%;
+  }
+
+  .input-textarea {
+    height: 150px;
+  }
+
+  .replace-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .input-field {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
+
+.app-container {
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: playfair display;
+  margin-top: 20px;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Textarea Styling */
+.textarea-container {
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Keyframe Animations */
+.animated-textarea {
+  animation: slideInUp 1s ease-out;
+}
+
+.word-stats {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.animated-fadeIn {
+  animation: fadeIn 1s ease-in;
+}
+
+.string-replacement {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.animated-bounceIn {
+  animation: bounceIn 1s ease-out;
+}
+
+/* Input Field Styles */
+.input-field {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button Styles */
+.replace-button {
+  padding: 8px 16px;
+  background-color: #4caf50;
   color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 400; /* Optional: Add to match previous styles */
+  letter-spacing: 1px; /* Optional: Add to match previous styles */
+  transition: 0.5s; /* Optional: Add to match previous styles */
 }
 
-.App-link {
-  color: #61dafb;
+/* Highlighting Animation for Replaced Text */
+.highlight {
+  background-color: yellow;
+  animation: highlightText 2s ease-out;
 }
 
-@keyframes App-logo-spin {
+.result-text {
+  margin-top: 20px;
+}
+
+.result-text p {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 0; /* Adjusted to make scrollbar visible */
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@keyframes typewriter {
   from {
-    transform: rotate(0deg);
+    width: 0;
   }
   to {
-    transform: rotate(360deg);
+    width: 100%;
   }
+}
+
+.typewriter {
+  color: #4caf50;
+  display: inline-block;
+  overflow: hidden; /* Ensures the text is hidden when animating */
+  white-space: nowrap; /* Prevents wrapping */
+  border-right: 2px solid; /* Creates the cursor effect */
+  animation: typewriter 4s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 1); /* Change this color to match your design */
+  }
+}
+
+span{
+ color: #4caf50;
+}
+.box{
+  font-family: playfair display;
+  box-shadow: 1px 1px #888888;
+}
+.text{
+  font-family: roboto;
+  box-shadow: 1px 1.2px #888888;
 }
