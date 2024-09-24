@@ -5,12 +5,20 @@ const StringReplacement = ({ text, onReplacement }) => {
   const [replaceString, setReplaceString] = useState('');
 
   const handleReplace = () => {
-    const replacedText = text.split(searchString).join(replaceString);
-    onReplacement(replacedText);
+    const regex = new RegExp(`(${searchString})`, 'gi'); // Create a regex to match the search string
+    const replacedText = text.split(regex).map((part, index) => {
+      // Check if the part matches the search string and style it
+      if (part.toLowerCase() === searchString.toLowerCase()) {
+        return <span key={index} style={{ color: '#4caf50' }}>{replaceString}</span>;
+      }
+      return part; // Return the original text part if it doesn't match
+    });
+
+    onReplacement(replacedText); // Pass the replaced text to the parent component
   };
 
   return (
-    <div className="mt-6 w-full max-w-2xl flex flex-col items-center space-y-4 ">
+    <div className="mt-6 w-full max-w-2xl flex flex-col items-center space-y-4">
       {/* Search String Input */}
       <div className="relative w-full animate__animated animate__fadeInLeftBig">
         <input
@@ -54,6 +62,15 @@ const StringReplacement = ({ text, onReplacement }) => {
       >
         Replace All
       </button>
+
+      {/* Display Replaced Text */}
+      {/* <div className="mt-4 text-white">
+        {Array.isArray(onReplacement) ? (
+          <span>{onReplacement}</span>
+        ) : (
+          <span dangerouslySetInnerHTML={{ __html: onReplacement }} />
+        )}
+      </div> */}
     </div>
   );
 };
